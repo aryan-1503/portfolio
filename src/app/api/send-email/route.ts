@@ -12,7 +12,7 @@ export const POST = async (req: NextRequest) => {
             success : true
         }, { status : 200 })
 
-    }catch (e: never) {
+    }catch (e: unknown) {
         console.log(e)
         return NextResponse.json({
             message : "Something went wrong in send-email"
