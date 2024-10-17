@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Menu, X, Twitter } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import axios from "axios"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,8 +13,8 @@ import snapshare from "@/public/snapshare.png"
 import deepfake from "@/public/deepfake.png"
 import cancerwisepro from "@/public/cancerwisepro.png"
 import back from "@/public/background.jpg"
-import { SiNextdotjs, SiReact, SiNodedotjs, SiExpress, SiDocker,SiGo, SiJavascript, SiTypescript, SiPython, SiMongodb, SiMysql, SiRedis } from 'react-icons/si'
-import { FaAws, FaJava } from "react-icons/fa";
+import { SiNextdotjs, SiReact, SiNodedotjs,SiX, SiGithub ,SiExpress, SiDocker,SiGo, SiJavascript, SiTypescript, SiPython, SiMongodb, SiMysql, SiRedis } from 'react-icons/si'
+import { FaAws, FaJava, FaLinkedin } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
 export default function Component() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -142,7 +142,7 @@ export default function Component() {
                         </motion.h1>
                         <div className="absolute inset-0 flex mt-24 items-center justify-center">
                             <Button asChild className="glow-head-btn mt-8 sm:mt-6 sm:text-base">
-                                <a href="#contact">Let's Connect</a>
+                                <a href="#contact">Let&apos;s Connect</a>
                             </Button>
                         </div>
                     </motion.div>
@@ -172,7 +172,7 @@ export default function Component() {
                                 className="md:w-1/2 grid place-items-center"
                             >
                                 <p className="text-justify text-lg mb-4 w-5/6" style={{ fontFamily: "Dubai, sans-serif"}}>
-                                    I'm Aryan, a full-stack developer passionate about pushing the boundaries of web technology. With a strong foundation in React, Next.js, and backend technologies, I specialize in delivering seamless, modern applications.
+                                    I&apos;m Aryan, a full-stack developer passionate about pushing the boundaries of web technology. With a strong foundation in React, Next.js, and backend technologies, I specialize in delivering seamless, modern applications.
                                 </p>
                                 <p className="text-justify text-lg w-5/6 font-dubai">
                                     Beyond coding, I enjoy exploring new tech trends, collaborating on open-source projects, and enhancing user experiences through thoughtful design and functionality.
@@ -247,9 +247,11 @@ export default function Component() {
                                     transition={{ duration: 0.5 }}
                                     className="bg-gray-800 rounded-lg overflow-hidden shadow-lg glow-card"
                                 >
-                                    <img
+                                    <Image
                                         src={project.image.src}
                                         alt={project.title}
+                                        width={1000}
+                                        height={1000}
                                         className="w-full h-48 object-cover"
                                     />
                                     <div className="p-6 bg-gray-900 opacity-90 h-full">
@@ -274,9 +276,9 @@ export default function Component() {
                                 <Toaster />
                             </form>
                             <div className="mt-12 flex justify-center space-x-6">
-                                <SocialIcon href="https://github.com/aryan-1503" icon={<Github />} label="GitHub" />
-                                <SocialIcon href="www.linkedin.com/in/aryan-panchal-82461b222" icon={<Linkedin />} label="LinkedIn" />
-                                <SocialIcon href="https://x.com/a_panchal03?t=U-wM2RO0GjLPdArf8sB0Bw&s=09" icon={<Twitter />} label="X" />
+                                <SocialIcon href="https://github.com/aryan-1503" icon={<SiGithub />} label="GitHub" />
+                                <SocialIcon href="www.linkedin.com/in/aryan-panchal-82461b222" icon={<FaLinkedin />} label="LinkedIn" />
+                                <SocialIcon href="https://x.com/a_panchal03?t=U-wM2RO0GjLPdArf8sB0Bw&s=09" icon={<SiX />} label="X" />
                             </div>
                         </div>
                     </div>
@@ -299,4 +301,4 @@ function NavItem({ href, children, onClick }) {
     );
 }
 
-function SocialIcon({ href, icon, label }) { return ( <a href={href} target="_blank" className="text-gray-400 hover:text-cyan-300 transition-colors duration-200 hover:neon-hover" aria-label={label} > {icon} </a> ) }
+function SocialIcon({ href, icon, label }) { return ( <a href={href} target="_blank" className="text-2xl text-gray-400 hover:text-cyan-300 transition-colors duration-200 hover:neon-hover" aria-label={label} > {icon} </a> ) }
