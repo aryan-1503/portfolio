@@ -16,7 +16,6 @@ import back from "@/public/background.jpg"
 import { SiNextdotjs, SiReact, SiNodedotjs, SiExpress, SiDocker,SiGo, SiJavascript, SiTypescript, SiPython, SiMongodb, SiMysql, SiRedis } from 'react-icons/si'
 import { FaAws, FaJava } from "react-icons/fa";
 import toast, { Toaster } from 'react-hot-toast';
-import {useRouter} from "next/navigation";
 export default function Component() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
