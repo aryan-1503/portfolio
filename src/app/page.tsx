@@ -90,7 +90,7 @@ export default function Component() {
                             {isMenuOpen ? <X /> : <Menu />}
                         </Button>
                     </div>
-                    <nav className=" md:flex space-x-8 z-10 tracking-wider font-lato">
+                    <nav className="hidden md:flex space-x-8 z-10 tracking-wider font-lato">
                         <NavItem href="#home">Home</NavItem>
                         <NavItem href="#about">About</NavItem>
                         <NavItem href="#tech-skills">Skills</NavItem>
