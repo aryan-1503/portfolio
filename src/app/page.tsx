@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect, useState} from 'react'
+import React, {ReactNode, useEffect, useState} from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import axios from "axios"
@@ -57,12 +57,12 @@ export default function Component() {
         }
     }
 
-    const handleExploreProject = (projectLink) => {
+    const handleExploreProject = (projectLink : string) => {
         window.open(projectLink, '_blank', 'noopener,noreferrer');
     }
 
     useEffect(() => {
-        const nameSequence = ["AP", "\u00A0AryanPanchal"];
+        const nameSequence : string[] = ["AP", "\u00A0AryanPanchal"];
         let index = 0;
 
         const interval = setInterval(() => {
@@ -90,7 +90,7 @@ export default function Component() {
                             {isMenuOpen ? <X /> : <Menu />}
                         </Button>
                     </div>
-                    <nav className="hidden md:flex space-x-8 z-10 tracking-wider font-lato">
+                    <nav className=" md:flex space-x-8 z-10 tracking-wider font-lato">
                         <NavItem href="#home">Home</NavItem>
                         <NavItem href="#about">About</NavItem>
                         <NavItem href="#tech-skills">Skills</NavItem>
@@ -112,6 +112,7 @@ export default function Component() {
                             <div className="flex flex-col space-y-4">
                                 <NavItem href="#home" onClick={handleCloseMenu}>Home</NavItem>
                                 <NavItem href="#about" onClick={handleCloseMenu}>About</NavItem>
+                                <NavItem href="#tech-skills" onClick={handleCloseMenu}>Skills</NavItem>
                                 <NavItem href="#projects" onClick={handleCloseMenu}>Projects</NavItem>
                                 <NavItem href="#contact" onClick={handleCloseMenu}>Contact</NavItem>
                             </div>
@@ -293,7 +294,14 @@ export default function Component() {
     )
 }
 
-function NavItem({ href, children, onClick }) {
+interface SocialIcon {
+    href: string,
+    icon: ReactNode,
+    label: string
+}
+
+
+function NavItem({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) {
     return (
         <a href={href} onClick={onClick} className="text-gray-300 hover:text-cyan-300 transition-colors duration-200 hover:neon-hover">
             {children}
@@ -301,4 +309,16 @@ function NavItem({ href, children, onClick }) {
     );
 }
 
-function SocialIcon({ href, icon, label }) { return ( <a href={href} target="_blank" className="text-2xl text-gray-400 hover:text-cyan-300 transition-colors duration-200 hover:neon-hover" aria-label={label} > {icon} </a> ) }
+
+
+function SocialIcon({ href, icon, label } : SocialIcon) { 
+    return ( 
+        <a 
+            href={href} 
+            target="_blank" 
+            className="text-2xl text-gray-400 hover:text-cyan-300 transition-colors duration-200 hover:neon-hover" 
+            aria-label={label} >
+                {icon} 
+        </a> 
+    ) 
+}
