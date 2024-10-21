@@ -133,7 +133,7 @@ export default function Component() {
                         className="relative text-center px-4"
                     >
                         <motion.h1
-                            className="text-3xl font-bold tracking-wide neon-head-text md:text-5xl sm:text-4xl font-dubai"
+                            className="text-[27px] font-bold tracking-wide neon-head-text md:text-5xl sm:text-4xl font-dubai"
                             style={{ letterSpacing: isExpanded ? '0.5em' : 'normal', transition: 'letter-spacing 0.8s ease' }}
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
