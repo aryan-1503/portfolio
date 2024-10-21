@@ -84,9 +84,9 @@ export default function Component() {
             style={{ backgroundImage: `url(${back.src})` }}
         >
             <header className="fixed w-full z-10 bg-gray-800 bg-opacity-20 backdrop-blur-sm shadow-md">
-                <div className="container relative mx-auto px-4 py-4 flex justify-around gap-20 items-center">
-                    <div className="md:hidden absolute right-5 mt-4">
-                        <Button variant="ghost" size="icon" className="z-20" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <div className="container relative mx-auto px-4 py-5 flex justify-around gap-20 items-center">
+                    <div className="md:hidden absolute right-5 mt-4 py-4">
+                        <Button variant="ghost" size="icon" className="z-20 pb-4" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                             {isMenuOpen ? <X /> : <Menu />}
                         </Button>
                     </div>
