@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer"
 import {NextResponse} from "next/server";
 
-export const sendEmail = async (name, email, message) => {
+export const sendEmail = async (name : string, email : string, message : string)  => {
     try {
         // Transporter for handling mails
         const transporter = nodemailer.createTransport({
