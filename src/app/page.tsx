@@ -48,7 +48,7 @@ export default function Component() {
         e.preventDefault();
         console.log(formData)
         try{
-            const res = await axios.post("http://localhost:3000/api/send-email", formData)
+            const res = await axios.post("https://aryan-panchal-dev.vercel.app/api/send-email", formData)
             toast.success(res.data.message,{
                 position: "top-right",
             })
@@ -60,6 +60,7 @@ export default function Component() {
     const handleExploreProject = (projectLink : string) => {
         window.open(projectLink, '_blank', 'noopener,noreferrer');
     }
+
 
     useEffect(() => {
         const nameSequence : string[] = ["AP", "\u00A0AryanPanchal"];
