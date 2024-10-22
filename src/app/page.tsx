@@ -74,7 +74,7 @@ export default function Component() {
             if (index >= nameSequence.length) {
                 clearInterval(interval);  // Stop after the final state
             }
-        }, 200);
+        }, 1000);
 
         return () => clearInterval(interval);  // Clean up interval on unmount
     }, []);
