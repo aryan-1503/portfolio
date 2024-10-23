@@ -48,7 +48,8 @@ export default function Component() {
         e.preventDefault();
         console.log(formData)
         try{
-            const res = await axios.post("https://aryan-panchal-dev.vercel.app/api/send-email", formData)
+            const url = "https://aryan-panchal-dev.vercel.app/api/send-email";
+            const res = await axios.post(url, formData)
             toast.success(res.data.message,{
                 position: "top-right",
             })
